@@ -81,7 +81,7 @@ public class GameHandler : MonoBehaviour
                 lastKnownPos = GroupPos;
                 // Set Cam On Group //
                 cameraFollow.SetCameraFollowPos(GroupPos);
-                cameraFollow.SetCameraZoom(40f);
+                cameraFollow.SetCameraZoom(60f);
             }
             else
             {
@@ -114,12 +114,12 @@ public class GameHandler : MonoBehaviour
         {
             zoom += zoomChangeAmount * Time.deltaTime * 10f;
         }
-        zoom = Mathf.Clamp(zoom, 20f, 80f);
+        zoom = Mathf.Clamp(zoom, 20f, 120f);
     }
     private void HandleManualMovement()
     {
         // Camera Controls //
-        float moveAmount = 50f;
+        float moveAmount = 100f;
         if (Input.GetKey(KeyCode.W))
         {
             cameraFollowPosition.y += moveAmount * Time.deltaTime;

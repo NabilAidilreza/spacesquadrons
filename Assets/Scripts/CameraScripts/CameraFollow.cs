@@ -47,7 +47,7 @@ public class CameraFollow : MonoBehaviour
 
         Vector3 cameraMoveDir = (cameraFollowPosition - transform.position).normalized;
         float distance = Vector3.Distance(cameraFollowPosition, transform.position);
-        float cameraMoveSpeed = 10f;
+        float cameraMoveSpeed = 20f;
 
         if (distance > 0)
         {
@@ -62,8 +62,8 @@ public class CameraFollow : MonoBehaviour
         }
         // Camera Boundary //
         transform.position = new Vector3(
-            Mathf.Clamp(transform.position.x,-110f,100f),
-            Mathf.Clamp(transform.position.y, -155f, 160f),
+            Mathf.Clamp(transform.position.x,-150f,140f),
+            Mathf.Clamp(transform.position.y, -293f, 305f),
             transform.position.z);
     }
     private void HandleZoom()

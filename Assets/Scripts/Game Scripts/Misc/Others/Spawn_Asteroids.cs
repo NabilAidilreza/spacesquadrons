@@ -9,17 +9,13 @@ public class Spawn_Asteroids : MonoBehaviour
     public GameObject Asteroid3;
     public float TimeBetweenSpawn;
     private float SpawnTime;
-    private float minX;
-    private float maxX;
-    private float minY;
-    private float maxY;
+    public float minX;
+    public float maxX;
+    public float minY;
+    public float maxY;
     // Start is called before the first frame update
     void Start()
     {
-        minX = -150;
-        maxX = 150;
-        minY = -150;
-        maxY = 150;
         SpawnTime = TimeBetweenSpawn;
         for(int i = 0; i < 60; i++)
         {
@@ -43,7 +39,7 @@ public class Spawn_Asteroids : MonoBehaviour
     void Update()
     {
         Asteroid[] Asteroids = GameObject.FindObjectsOfType<Asteroid>();
-        if(Asteroids.Length < 60)
+        if(Asteroids.Length < 100)
         {
             if(SpawnTime < 0)
             {
