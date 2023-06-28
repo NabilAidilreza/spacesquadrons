@@ -97,7 +97,7 @@ public class GameHandler : MonoBehaviour
     }
     private void HandleMouseZoom()
     {
-        float zoomChangeAmount = 80f;
+        float zoomChangeAmount = 120f;
         if (Input.GetKey(KeyCode.KeypadPlus))
         {
             zoom -= zoomChangeAmount * Time.deltaTime;
@@ -139,7 +139,7 @@ public class GameHandler : MonoBehaviour
     }
     private void HandleEdgeMovement()
     {
-        float moveAmount = 50f;
+        float moveAmount = 100f;
         // Edge Scrolling //
         if (Input.GetKeyDown(KeyCode.Z))
         {
