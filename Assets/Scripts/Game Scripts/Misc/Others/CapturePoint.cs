@@ -102,17 +102,21 @@ public class CapturePoint : MonoBehaviour
         {
             RedCapColor.transform.position = new Vector3(RedCapColor.transform.position.x, RedCapColor.transform.position.y, -1);
             BlueCapColor.transform.position = new Vector3(BlueCapColor.transform.position.x, BlueCapColor.transform.position.y, 1);
-            // UI Change //
-            Point.transform.GetChild(0).gameObject.SetActive(true);
-            Point.transform.GetChild(1).gameObject.SetActive(false);
+            if(Point != null){
+                // UI Change //
+                Point.transform.GetChild(0).gameObject.SetActive(true);
+                Point.transform.GetChild(1).gameObject.SetActive(false);
+            }
         }
         if (blueCaptureStatus == true)
         {
             BlueCapColor.transform.position = new Vector3(BlueCapColor.transform.position.x, BlueCapColor.transform.position.y, -1);
             RedCapColor.transform.position = new Vector3(RedCapColor.transform.position.x, RedCapColor.transform.position.y, 1);
-            // UI Change //
-            Point.transform.GetChild(0).gameObject.SetActive(false);
-            Point.transform.GetChild(1).gameObject.SetActive(true);
+            if(Point != null){
+                // UI Change //
+                Point.transform.GetChild(0).gameObject.SetActive(false);
+                Point.transform.GetChild(1).gameObject.SetActive(true);
+            }
         }
     }
     //Uses Team Tag and Collider Array To Find The Team Count
