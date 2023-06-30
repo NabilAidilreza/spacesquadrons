@@ -62,7 +62,7 @@ public class CameraFollow : MonoBehaviour
         }
         // Camera Boundary //
         transform.position = new Vector3(
-            Mathf.Clamp(transform.position.x,-150f,140f),
+            Mathf.Clamp(transform.position.x,-170f,160f),
             Mathf.Clamp(transform.position.y, -293f, 305f),
             transform.position.z);
     }

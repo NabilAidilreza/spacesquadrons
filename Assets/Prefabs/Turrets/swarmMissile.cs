@@ -22,7 +22,6 @@ public class swarmMissile : MonoBehaviour
     {
         float dist = Vector3.Distance(this.transform.position, targetUnit.transform.position);
         timeToDetonate = (dist / swarmSpeed) - 2f;  
-        Debug.Log(timeToDetonate);
     }
     void Update(){
         transform.position += transform.up * swarmSpeed * Time.deltaTime;

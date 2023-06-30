@@ -96,5 +96,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Points: 2
   scaleFactor: 10
-  Prefab: {fileID: 1453199173007272910, guid: 880b464fcc99caf4fae662543cab85d9, type: 3}
+  Prefab: {fileID: 7751744402856437893, guid: 2c6f11ba2e4d2b94da1d2b68e832b4f3, type: 3}
   IsUnit: 1

@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Transport_Drone : MonoBehaviour
 {
-    public GameObject ControlCenter;
+    public GameObject ControlCenter; // passed by control center
     public List<GameObject> BuildingLst; // passed by control center
     private List<Vector3> waypoints = new List<Vector3>();
     private int i = 0;
+    public GameObject NumberPopOut;
 
     // Upon instantiate, control center will pass building list to this script, will update if got changed
     private void Start()
@@ -44,8 +45,10 @@ public class Transport_Drone : MonoBehaviour
         // Replace this logic with your actual implementation to generate random waypoints based on scanned buildings
         for (int i = 0; i < BuildingLst.Count; i++)
         {
-            Vector3 randomWaypoint = new Vector3(BuildingLst[i].transform.position.x,BuildingLst[i].transform.position.y,BuildingLst[i].transform.position.z);
-            randomWaypoints.Add(randomWaypoint);
+            if(BuildingLst[i] != null){
+                Vector3 randomWaypoint = new Vector3(BuildingLst[i].transform.position.x,BuildingLst[i].transform.position.y,BuildingLst[i].transform.position.z);
+                randomWaypoints.Add(randomWaypoint);
+            }
         }
 
         return randomWaypoints;
@@ -60,9 +63,13 @@ public class Transport_Drone : MonoBehaviour
         if(transform.position == waypoints[i]){
             i++;
             if(i == waypoints.Count){
+                ControlCenter.SendMessage("AddPoints",i);    
                 i = 0;
                 UpdateBuildings();
                 ScanBuildings(); // Recalculate waypoints after visiting all buildings
+            }
+            if(i % 2 == 0){
+                Instantiate(NumberPopOut, transform.position + new Vector3(-0.08f, 1f, 0f), Quaternion.identity);
             }
         }
     }
