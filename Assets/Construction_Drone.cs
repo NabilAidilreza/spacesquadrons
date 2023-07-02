@@ -187,6 +187,9 @@ public class Construction_Drone : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, 5f);
     }
     public void AddNewBuidable(GameObject Building){
-        BuildableLst.Add(Building);
+        if(!BuildableLst.Contains(Building))
+        {
+            BuildableLst.Add(Building);
+        }
     }
 }

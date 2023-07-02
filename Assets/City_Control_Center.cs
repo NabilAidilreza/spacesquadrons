@@ -20,28 +20,32 @@ public class City_Control_Center : MonoBehaviour
     public GameObject Bunker2;
     private int checkNumber = 0;
     private int lastNumber = 0;
-    public int level = 1;
+    public int level;
     private int maxPoints;
     private int totalPoints;
+
+    private int checkDone = 0;
     // Script to manage city drones
     // Start is called before the first frame update
     void Start()
     {
+        level = 1;
         BuildableLst.Add(City_Object1);
         BuildableLst.Add(City_Object2);
         BuildableLst.Add(City_Object3);
         BuildableLst.Add(City_Object4);
         // Instantiate initial city drones
         BuildConstructionDrone();
-        BuildTransportDrone();
         BuildConstructionDrone();
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(totalPoints);
         CheckToAddTransport();
         LevelLogic();
+        ManageControlCenter();
     }
     private void LevelLogic(){
         if(BuildingLst.Count == 1){
@@ -50,6 +54,12 @@ public class City_Control_Center : MonoBehaviour
         maxPoints = level * 100;
         if(totalPoints >= maxPoints){
             totalPoints = maxPoints;
+        }
+    }
+    private void ManageControlCenter(){
+        if(level > 3 && checkDone == 0){
+            AddNewBuidableToDrones(Bunker);
+            checkDone = 1;
         }
     }
     public void AddBuilding(GameObject Building){

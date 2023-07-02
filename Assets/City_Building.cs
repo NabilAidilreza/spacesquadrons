@@ -32,7 +32,7 @@ public class City_Building : MonoBehaviour
     public void IncreaseLevel(){
         LEVEL ++;
     }
-    public float GetLevel(){
+    public int GetLevel(){
         return LEVEL;
     }
 }

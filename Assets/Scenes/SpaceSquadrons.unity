@@ -4932,7 +4932,7 @@ PrefabInstance:
     - target: {fileID: 8985411050507188817, guid: 5c6b756fababf8c4ba6875dec9ea728c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c6b756fababf8c4ba6875dec9ea728c, type: 3}
@@ -6369,7 +6369,7 @@ MonoBehaviour:
     type: 3}
   City_Object4: {fileID: 3049357427958864024, guid: 6405dc3c83580dd41a362fce0f4d4727,
     type: 3}
-  Bunker: {fileID: 0}
+  Bunker: {fileID: 8560452123449522527, guid: 1c807e0d84e07f84da406a18a8909015, type: 3}
   Bunker2: {fileID: 0}
   level: 1
 --- !u!212 &1250191041
@@ -12865,7 +12865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &6372198378088884966
 GameObject:
   m_ObjectHideFlags: 0
