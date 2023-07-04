@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8551572515827307868}
   - component: {fileID: 8551572515827307841}
   - component: {fileID: 8551572515827307842}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Construction_Drone
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -8,12 +8,13 @@ public class NewPoint : MonoBehaviour
     private float resetCooldown;
     public GameObject waypoint;
     public GameObject Squad;
+    private float radius;
     // Start is called before the first frame update
     void Start()
     {
         resetCooldown = 1.5f;
         Cooldown = resetCooldown;
-        float radius = 30f;
+        radius = 30f;
         Vector2 CirclePoint = Random.insideUnitCircle * radius;
         this.transform.position = waypoint.transform.position + new Vector3(CirclePoint.x, CirclePoint.y, 0);
         if(Mathf.Abs(this.transform.position.x - Squad.transform.position.x) < 5f){
@@ -31,7 +32,6 @@ public class NewPoint : MonoBehaviour
         {
             if(waypoint != null)
             {
-                float radius = 30f;
                 Vector2 CirclePoint = Random.insideUnitCircle * radius;
                 this.transform.position = waypoint.transform.position + new Vector3(CirclePoint.x, CirclePoint.y, 0);
                 if(Mathf.Abs(this.transform.position.x - Squad.transform.position.x) < 5f){
@@ -48,5 +48,8 @@ public class NewPoint : MonoBehaviour
         {
             Cooldown -= Time.deltaTime;
         }
+    }
+    public void SetRadius(float rad){
+        radius = rad;
     }
 }

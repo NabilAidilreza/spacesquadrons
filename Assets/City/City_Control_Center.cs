@@ -42,7 +42,6 @@ public class City_Control_Center : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(totalPoints);
         CheckToAddTransport();
         LevelLogic();
         ManageControlCenter();

@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: e4ba4b9ee829fac4780adf002f476a1e
+guid: e79c7128927b61946b04d10a154be2a2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8596640243658272642
-    second: Enemy_0
+      213: 5369017113777300946
+    second: EnemyMega_0
   - first:
-      213: -7642239419928554605
-    second: Enemy_1
+      213: 7081469296372043931
+    second: EnemyMega_1
   - first:
-      213: -3876759189950653258
-    second: Enemy_2
+      213: 7566929566205951741
+    second: EnemyMega_2
   - first:
-      213: -5720429097031363069
-    second: Enemy_3
-  - first:
-      213: -7911572535675539837
-    second: Enemy_4
-  - first:
-      213: 5398807837072792716
-    second: Enemy_5
+      213: 8735720528429732163
+    second: EnemyMega_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -50,8 +44,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -101,53 +95,23 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Enemy_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1024
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 28f241131c66d4770800000000000000
-      internalID: 8596640243658272642
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy_1
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 1024
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 393dba6ecbf41f590800000000000000
-      internalID: -7642239419928554605
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy_2
+      name: EnemyMega_0
       rect:
         serializedVersion: 2
         x: 0
@@ -161,14 +125,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bc92438e0cf23ac0800000000000000
-      internalID: -3876759189950653258
+      spriteID: 2d560b36e94928a40800000000000000
+      internalID: 5369017113777300946
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_3
+      name: EnemyMega_1
       rect:
         serializedVersion: 2
         x: 512
@@ -182,14 +146,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30613ac5b04fc90b0800000000000000
-      internalID: -5720429097031363069
+      spriteID: b90571a4ece664260800000000000000
+      internalID: 7081469296372043931
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_4
+      name: EnemyMega_2
       rect:
         serializedVersion: 2
         x: 0
@@ -203,14 +167,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38ea25432b2743290800000000000000
-      internalID: -7911572535675539837
+      spriteID: dfe3b126952230960800000000000000
+      internalID: 7566929566205951741
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy_5
+      name: EnemyMega_3
       rect:
         serializedVersion: 2
         x: 512
@@ -224,8 +188,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8c915baf1b6cea40800000000000000
-      internalID: 5398807837072792716
+      spriteID: 341542a69838b3970800000000000000
+      internalID: 8735720528429732163
       vertices: []
       indices: 
       edges: []
