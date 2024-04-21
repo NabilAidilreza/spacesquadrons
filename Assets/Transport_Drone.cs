@@ -58,7 +58,7 @@ public class Transport_Drone : MonoBehaviour
     }
     private void Navigate()
     {
-        transform.position = Vector3.MoveTowards(transform.position, waypoints[i], 20f * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, waypoints[i], 10f * Time.deltaTime);
         transform.up = waypoints[i] - transform.position;
         if(transform.position == waypoints[i]){
             i++;

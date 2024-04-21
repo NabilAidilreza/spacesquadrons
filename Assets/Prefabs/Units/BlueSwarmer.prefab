@@ -210,6 +210,7 @@ MonoBehaviour:
   ShootPoint1: {fileID: 8526634725164761452}
   ShootPoint2: {fileID: 8526634725164761452}
   isHoming: 0
+  gunSound: {fileID: 8300000, guid: 8a006be39bbd86a44b83331526a1e5ea, type: 3}
 --- !u!114 &2271078550201353780
 MonoBehaviour:
   m_ObjectHideFlags: 0

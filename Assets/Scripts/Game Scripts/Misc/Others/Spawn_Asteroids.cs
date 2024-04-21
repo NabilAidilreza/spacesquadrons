@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Spawn_Asteroids : MonoBehaviour
 {
+    public Transform Environment;
     public GameObject Asteroid1;
     public GameObject Asteroid2;
     public GameObject Asteroid3;
@@ -22,15 +23,18 @@ public class Spawn_Asteroids : MonoBehaviour
             int ran = Random.Range(0, 2);
             if(ran == 0)
             {
-                Instantiate(Asteroid1,new Vector3(Random.Range(minX,maxX),Random.Range(minY,maxY),0),Quaternion.identity);
+                GameObject a = Instantiate(Asteroid1,new Vector3(Random.Range(minX,maxX),Random.Range(minY,maxY),0),Quaternion.identity);
+                a.transform.parent = Environment;
             }
             else if (ran == 1)
             {
-                Instantiate(Asteroid2, new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), 0), Quaternion.identity);
+                GameObject a = Instantiate(Asteroid2, new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), 0), Quaternion.identity);
+                a.transform.parent = Environment;
             }
             else if (ran == 2)
             {
-                Instantiate(Asteroid3, new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), 0), Quaternion.identity);
+                GameObject a = Instantiate(Asteroid3, new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), 0), Quaternion.identity);
+                a.transform.parent = Environment;
             }
         }
     }

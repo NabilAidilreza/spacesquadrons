@@ -23,6 +23,7 @@ public class DuoTurret : Turret
     private GameObject OH;
     public GameObject ShockEffect;
     private GameObject Shock;
+    [SerializeField] private AudioClip gunSound;
 
     // Start is called before the first frame update
     void Start()
@@ -91,6 +92,7 @@ public class DuoTurret : Turret
                     Duo.SetBool("Shooting", true);
                     if (CoolDown <= 0)
                     {
+                        SoundFXManager.instance.PlaySoundFXClip(gunSound, transform, 0.3f);
                         if (i % 2 == 0)
                         {
                             Rigidbody2D projectileInstance;

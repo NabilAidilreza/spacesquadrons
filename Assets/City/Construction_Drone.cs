@@ -171,7 +171,7 @@ public class Construction_Drone : MonoBehaviour
         }
     }
     private void MoveToBuildPoint(){
-        transform.position = Vector3.MoveTowards(transform.position, BuildPoint, 20f * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, BuildPoint, 10f * Time.deltaTime);
         transform.up = BuildPoint - transform.position;
     }
     private void Build_Building(){

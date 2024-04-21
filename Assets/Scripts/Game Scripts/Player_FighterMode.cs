@@ -25,6 +25,8 @@ public class Player_FighterMode : MonoBehaviour
     private float ProjectileSpeed = 100f;
     public bool isHoming;
 
+    [SerializeField] private AudioClip gunSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -138,6 +140,7 @@ public class Player_FighterMode : MonoBehaviour
             }
             else
             {
+                SoundFXManager.instance.PlaySoundFXClip(gunSound, transform, 0.3f);
                 if (i % 2 == 0)
                 {
                     Rigidbody2D projectileInstance;

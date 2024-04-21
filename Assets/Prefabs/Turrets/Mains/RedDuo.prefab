@@ -165,6 +165,7 @@ MonoBehaviour:
     type: 3}
   ShockEffect: {fileID: 3528241083189750078, guid: 966cb0dffc650684fbdf8f653078a24b,
     type: 3}
+  gunSound: {fileID: 8300000, guid: 6d633c61e6e012249b97a409fad7b3d0, type: 3}
 --- !u!61 &4782525799746761949
 BoxCollider2D:
   m_ObjectHideFlags: 0

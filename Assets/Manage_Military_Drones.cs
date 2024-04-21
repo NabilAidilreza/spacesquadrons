@@ -11,6 +11,10 @@ public class Manage_Military_Drones : MonoBehaviour
     public Transform SpawnPoint3;
     public Transform SpawnPoint4;
 
+    public Transform Enemy;
+
+    private float AttackRange = 40f;
+
     public Transform PatrolPoint;
     // Start is called before the first frame update
     void Start()
@@ -32,17 +36,54 @@ public class Manage_Military_Drones : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PatrolArea();
+        MilitaryDrone_Lst.RemoveAll(GameObject => GameObject == null);
+        if(Enemy == null){
+            PatrolArea();
+        }
+        FindAndSetTarget();
     }
     private void PatrolArea(){
         transform.position = Vector3.MoveTowards(transform.position, PatrolPoint.position, 15f * Time.deltaTime);
     }
     private void FindAndSetTarget(){
+        Transform target = FindClosestEnemy();
+        if(target != null){
+            float Range = Vector2.Distance(transform.position, target.transform.position);
+            if (Range < AttackRange){
+                Enemy = target;
+                foreach (GameObject curr in MilitaryDrone_Lst){
+                    curr.GetComponent<Military_Drone>().EnemyTarget = Enemy.gameObject;
+                }
+            }
+        }
 
     }
     private void CheckStatus(){
         if(MilitaryDrone_Lst.Count == 0){
             Destroy(gameObject);
         }
+    }
+
+
+
+    public Transform FindClosestEnemy()
+    {
+        float DtoC = Mathf.Infinity;
+        Enemy closestEnemy = null;
+        Enemy[] lall = GameObject.FindObjectsOfType<Enemy>();
+        foreach (Enemy curr in lall)
+        {
+            float DtoE = (curr.transform.position - this.transform.position).sqrMagnitude;
+            if (DtoE < DtoC)
+            {
+                DtoC = DtoE;
+                closestEnemy = curr;
+            }
+        }
+        if(closestEnemy == null)
+        {
+            return null;
+        }
+        return closestEnemy.GetComponent<Transform>();
     }
 }

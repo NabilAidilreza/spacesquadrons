@@ -8,23 +8,25 @@ public class City_Control_Center : MonoBehaviour
     private List<GameObject> Construction_Drone_Lst = new List<GameObject>();
     private List<GameObject> Transport_Drone_Lst = new List<GameObject>();
     private List<GameObject> BuildableLst = new List<GameObject>();
-    public GameObject ConstructionDrone;
+    public GameObject ConstructionDrone; // Max 2
     public GameObject TransportDrone;
     public GameObject PatrolDrone;
-    public GameObject MilitaryDrone;
     public GameObject City_Object1;
     public GameObject City_Object2;
     public GameObject City_Object3;
     public GameObject City_Object4;
-    public GameObject Bunker;
-    public GameObject Bunker2;
+    public GameObject City_Bunker; // Defense Turret
     private int checkNumber = 0;
     private int lastNumber = 0;
     public int level;
     private int maxPoints;
-    private int totalPoints;
-
+    private int totalPoints = 20; // Initial Points
     private int checkDone = 0;
+
+    // Constraints for City
+    private int MaxConstructionDrone;
+    private int MaxPatrolDrone;
+    private int MaxTransportDrone;
     // Script to manage city drones
     // Start is called before the first frame update
     void Start()
@@ -34,22 +36,27 @@ public class City_Control_Center : MonoBehaviour
         BuildableLst.Add(City_Object2);
         BuildableLst.Add(City_Object3);
         BuildableLst.Add(City_Object4);
+
         // Instantiate initial city drones
         BuildConstructionDrone();
         BuildConstructionDrone();
+
+
+        // Level 1 => 10 buildings
+        // Level 2 => 20 buildings
+        // Level 3 => 30 buildings
+        // Level 4 => 40 buildings
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckToAddTransport();
+        ConditionToAddTransport();
         LevelLogic();
         ManageControlCenter();
     }
+
     private void LevelLogic(){
-        if(BuildingLst.Count == 1){
-            totalPoints = 20;
-        }
         maxPoints = level * 100;
         if(totalPoints >= maxPoints){
             totalPoints = maxPoints;
@@ -57,7 +64,7 @@ public class City_Control_Center : MonoBehaviour
     }
     private void ManageControlCenter(){
         if(level > 3 && checkDone == 0){
-            AddNewBuidableToDrones(Bunker);
+            AddNewBuidableToDrones(City_Bunker);
             checkDone = 1;
         }
     }
@@ -73,6 +80,7 @@ public class City_Control_Center : MonoBehaviour
         Construction_Drone_Lst.Add(C_DRONE);
     }
     private void AddNewBuidableToDrones(GameObject Building){
+        // Adds new buildable buildings to available jobs that drones can construct
         foreach (GameObject drone in Construction_Drone_Lst){
             drone.GetComponent<Construction_Drone>().AddNewBuidable(Building);
         }
@@ -96,13 +104,15 @@ public class City_Control_Center : MonoBehaviour
         }
         return count;
     }
-    public void CheckToAddTransport(){
+    public void ConditionToAddTransport(){
         checkNumber = BuildingLst.Count;
         if(BuildingLst.Count % 3 == 0 && checkNumber != lastNumber){
             BuildTransportDrone();
             lastNumber = checkNumber;
         }
     }
+    
+    // Point Functions //
     public void AddPoint(){
         totalPoints ++;
     }

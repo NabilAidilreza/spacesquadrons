@@ -9,6 +9,7 @@ public class Military_Drone : MonoBehaviour
     private float BreakOffRange;
     public GameObject EnemyTarget; // passed by main
     public Transform MovePoint; // Passed by main
+    private Transform OGMovePoint;
     private bool RunAvailable;
     private bool Retreat;
     private Vector3 RP;
@@ -33,6 +34,7 @@ public class Military_Drone : MonoBehaviour
         RunAvailable = true;
         Retreat = false;
         RP = new Vector3();
+        OGMovePoint = MovePoint;
     }
 
     // Update is called once per frame
@@ -48,6 +50,7 @@ public class Military_Drone : MonoBehaviour
     void ReturnToSquad(){
         // Follow squad point //
         RunDone = false;
+        MovePoint = OGMovePoint;
         MoveToPoint();
     }
     void AttackMode(){
